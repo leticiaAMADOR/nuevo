@@ -5,7 +5,7 @@ db = web.database(dbn='mysql', db='agendas', user='root', pw='toor')
 render=web.template.render('templates')
 urls = (
     
-    '/index','index',
+    '/','index',
     '/nuevo', 'nuevo',
     '/editar/(.+)','editar',
     '/ver/(.+)','ver',
@@ -41,7 +41,7 @@ class nuevo:
             telefono=formNew.d.Telefono, email=formNew.d.Email,
              direccion=formNew.d.Direccion)
             result=db.select('datos')
-            raise web.seeother('/index')
+            raise web.seeother('/')
             
 
 class editar:
@@ -67,7 +67,7 @@ class editar:
              telefono=formEdit.d.Telefono, email=formEdit.d.Email,
               direccion=formEdit.d.Direccion)
             result=db.select('datos')
-            raise web.seeother('/index')
+            raise web.seeother('/')
 class eliminar:
     def GET(self,id_dato):
         formEdit=myformAgendas()
@@ -87,7 +87,7 @@ class eliminar:
             return render.eliminar(formEdit)
         else:
             db.delete('datos', where="id_dato=%s"%(id_dato))
-            raise web.seeother('/index')
+            raise web.seeother('/')
 
 
 if __name__ == "__main__":
