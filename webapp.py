@@ -1,7 +1,8 @@
 import web
 # @
 from web import form
-db = web.database(dbn='mysql', db='agendas', user='root', pw='toor')
+db = web.database(dbn='mysql', db='qgita32e92n4cdkh', user='mjgbfztb8gvczgwx', pw='	
+d2yjba6ofcokmjix' host='tkck4yllxdrw0bhi.cbetxkdyhwsb.us-east-1.rds.amazonaws.com')
 render=web.template.render('templates')
 urls = (
     
