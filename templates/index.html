@@ -1,0 +1,57 @@
+$def with (result)
+<html>
+    <head>
+        <LINK REL=StyleSheet HREF="static/css/index.css" TYPE="text/css" >
+       <link rel="icon" type="image/png" href="icono.png" />
+        
+        <title> Agenda</title>
+    </head>
+    <body>
+<center>
+    
+    <form name="main" method="post"> 
+<input type="submit" value="Nuevo" class="btnVer"/>   </form>
+      <h1>Todos los Registros</h1>  
+      <div id="div1">
+        
+<table border="1">
+    
+    <th class="txtMargen">
+        Nombre
+    </th>
+    <th class="txtMargen">
+       Telefono
+    </th>
+    <th class="txtMargen">
+       Email
+    </th>
+    
+    <th class="txtMargen">
+        Direccion 
+    </th>
+    <th class="txtMargen">
+        Editar 
+    </th>
+     <th class="txtMargen">
+        Eliminar 
+    </th>
+    $for row in result:
+    <tr>
+        <td class="txtLetras">$row.nombre</td>
+        <td class="txtLetras">$row.telefono</td>
+        <td class="txtLetras">$row.email</td> 
+        <td class="txtLetras">$row.direccion</td> 
+         
+          <td> <a href="/editar/$row.id_dato"> <input type="submit" value="Editar" class="btnEditar"/></a>  </td>
+           <td><a href="/eliminar/$row.id_dato"><input type="submit" value="Eliminar" class="btnEliminar" /></a> </td>
+    </tr>
+</table>
+</div>
+
+<center>
+ </body>
+      
+    
+</html>
+
+
